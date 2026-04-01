@@ -1,0 +1,50 @@
+```
+# Compressed files
+*.zip
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+dist/
+build/
+target/
+.gradle/
+
+# Editors
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Compiled files
+*.pyc
+*.class
+*.o
+*.exe
+*.dll
+*.so
+*.a
+*.obj
+*.out
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+```

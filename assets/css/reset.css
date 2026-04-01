@@ -1,0 +1,196 @@
+/* ============================================
+   CSS RESET & BASE STYLES
+   ============================================ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Typography Reset */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ============================================
+   CONTAINER SYSTEM
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 60px;
+    }
+}
+
+/* ============================================
+   GRID SYSTEM
+   ============================================ */
+
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 992px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-column { display: flex; flex-direction: column; }
+
+.hidden { display: none !important; }
+.visible { opacity: 1 !important; }
+
+/* Section Spacing */
+.section {
+    padding: var(--spacing-section-mobile) 0;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: var(--spacing-section-tablet) 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        padding: var(--spacing-section-desktop) 0;
+    }
+}
+
+.section-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus States */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

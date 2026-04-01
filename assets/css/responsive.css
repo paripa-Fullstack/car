@@ -1,0 +1,331 @@
+/* ============================================
+   RESPONSIVE DESIGN
+   Mobile-First Breakpoints
+   ============================================ */
+
+/* ============================================
+   TABLET (768px+)
+   ============================================ */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .section {
+        padding: var(--spacing-section-tablet) 0;
+    }
+    
+    /* Typography Adjustments */
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+}
+
+/* ============================================
+   DESKTOP (992px+)
+   ============================================ */
+@media (min-width: 992px) {
+    .container {
+        padding: 0 60px;
+    }
+    
+    .section {
+        padding: var(--spacing-section-desktop) 0;
+    }
+    
+    /* Grid Adjustments */
+    .grid-2-md { grid-template-columns: repeat(2, 1fr); }
+    .grid-3-md { grid-template-columns: repeat(3, 1fr); }
+    .grid-4-md { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ============================================
+   LARGE DESKTOP (1200px+)
+   ============================================ */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1440px;
+        padding: 0 80px;
+    }
+    
+    /* Enhanced Layouts */
+    .hero__kpi {
+        gap: var(--spacing-6);
+    }
+    
+    .kpi-card {
+        padding: var(--spacing-6);
+    }
+}
+
+/* ============================================
+   EXTRA LARGE DESKTOP (1440px+)
+   ============================================ */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
+/* ============================================
+   MOBILE DEVICES (Max Width Queries)
+   ============================================ */
+
+/* Large Mobile to Tablet (991px and below) */
+@media (max-width: 991px) {
+    .header--sticky .header__logo-image {
+        height: 35px;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding-bottom: var(--spacing-8);
+    }
+    
+    .hero__visual {
+        order: -1;
+    }
+    
+    .hero__image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet to Mobile (767px and below) */
+@media (max-width: 767px) {
+    :root {
+        --spacing-section-mobile: 50px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .section {
+        padding: var(--spacing-section-mobile) 0;
+    }
+    
+    /* Hero Adjustments */
+    .hero {
+        padding-top: 80px;
+    }
+    
+    .hero__badge {
+        font-size: 10px;
+        padding: var(--spacing-2) var(--spacing-3);
+    }
+    
+    .hero__title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .hero__subtitle {
+        font-size: var(--font-size-md);
+    }
+    
+    .hero__cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero__cta .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero__kpi {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-3);
+    }
+    
+    .kpi-card {
+        padding: var(--spacing-4);
+    }
+    
+    .kpi-card__value {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .kpi-card__label {
+        font-size: 10px;
+    }
+    
+    /* Header Adjustments */
+    .header__container {
+        padding: var(--spacing-4) var(--spacing-5);
+    }
+    
+    .header--sticky .header__container {
+        padding: var(--spacing-3) var(--spacing-5);
+    }
+    
+    .header__logo-text {
+        font-size: var(--font-size-lg);
+    }
+    
+    .header__logo-slogan {
+        display: none;
+    }
+    
+    /* Hide city selector on mobile */
+    .header__city {
+        display: none;
+    }
+    
+    .header__contact {
+        display: none;
+    }
+    
+    /* Mobile Menu Adjustments */
+    .mobile-menu {
+        max-width: 100%;
+        padding: var(--spacing-5);
+    }
+    
+    .mobile-menu__link {
+        font-size: var(--font-size-md);
+        padding: var(--spacing-3) 0;
+    }
+}
+
+/* Small Mobile (575px and below) */
+@media (max-width: 575px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .hero__kpi {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .kpi-card {
+        border-radius: var(--radius-lg);
+    }
+    
+    /* Buttons Stack */
+    .hero__cta {
+        gap: var(--spacing-3);
+    }
+    
+    /* Smaller typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+}
+
+/* Extra Small Mobile (359px and below) */
+@media (max-width: 359px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .hero__kpi {
+        grid-template-columns: 1fr;
+    }
+    
+    .kpi-card {
+        padding: var(--spacing-3);
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .header,
+    .footer,
+    .mobile-menu,
+    .overlay,
+    button,
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 0;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+    
+    .hero__container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .hero__scroll {
+        display: none;
+    }
+}
+
+/* ============================================
+   HIGH DPI / RETINA DISPLAYS
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .header__logo-image,
+    .hero__main-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Future Enhancement)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    /* Can be activated when dark mode is implemented */
+    /* 
+    :root {
+        --color-bg-primary: var(--color-gray-900);
+        --color-bg-secondary: var(--color-gray-800);
+        --color-text-primary: var(--color-white);
+        --color-text-secondary: var(--color-gray-300);
+    }
+    
+    .header--sticky {
+        background-color: rgba(26, 32, 44, 0.98);
+    }
+    
+    .kpi-card {
+        background-color: var(--color-gray-800);
+        border-color: var(--color-gray-700);
+    }
+    */
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED DATA
+   ============================================ */
+@media (prefers-reduced-data: reduce) {
+    .hero__background,
+    .hero__decor,
+    .hero__gradient {
+        display: none;
+    }
+    
+    .hero {
+        background: var(--color-gray-100);
+    }
+}
