@@ -1,0 +1,223 @@
+/* ============================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   Premium Auto Haus Design System
+   ============================================ */
+
+:root {
+    /* ============================================
+       COLOR PALETTE
+       ============================================ */
+    
+    /* Primary Colors - Deep Blue/Black Premium */
+    --color-primary: #0a1628;
+    --color-primary-light: #1a2a4a;
+    --color-primary-dark: #050d18;
+    
+    /* Accent Colors - Gold/Bronze for Luxury */
+    --color-accent: #c9a962;
+    --color-accent-light: #d4b878;
+    --color-accent-dark: #b0924a;
+    
+    /* Secondary Colors */
+    --color-secondary: #2d3748;
+    --color-tertiary: #4a5568;
+    
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-off-white: #f8f9fa;
+    --color-gray-100: #f7fafc;
+    --color-gray-200: #edf2f7;
+    --color-gray-300: #e2e8f0;
+    --color-gray-400: #cbd5e0;
+    --color-gray-500: #a0aec0;
+    --color-gray-600: #718096;
+    --color-gray-700: #4a5568;
+    --color-gray-800: #2d3748;
+    --color-gray-900: #1a202c;
+    --color-black: #000000;
+    
+    /* Status Colors */
+    --color-success: #48bb78;
+    --color-warning: #ecc94b;
+    --color-error: #f56565;
+    --color-info: #4299e1;
+    
+    /* Background Colors */
+    --color-bg-primary: var(--color-white);
+    --color-bg-secondary: var(--color-gray-100);
+    --color-bg-dark: var(--color-primary);
+    --color-bg-card: var(--color-white);
+    
+    /* Text Colors */
+    --color-text-primary: var(--color-gray-900);
+    --color-text-secondary: var(--color-gray-600);
+    --color-text-muted: var(--color-gray-500);
+    --color-text-inverse: var(--color-white);
+    --color-text-link: var(--color-primary);
+    
+    /* Border Colors */
+    --color-border: var(--color-gray-300);
+    --color-border-light: var(--color-gray-200);
+    --color-border-dark: var(--color-gray-400);
+    
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    
+    /* Font Families */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+    
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-md: 1rem;         /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-3xl: 1.875rem;    /* 30px */
+    --font-size-4xl: 2.25rem;     /* 36px */
+    --font-size-5xl: 3rem;        /* 48px */
+    --font-size-6xl: 3.75rem;     /* 60px */
+    
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* Letter Spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    
+    /* ============================================
+       SPACING SYSTEM
+       ============================================ */
+    
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;   /* 4px */
+    --spacing-2: 0.5rem;    /* 8px */
+    --spacing-3: 0.75rem;   /* 12px */
+    --spacing-4: 1rem;      /* 16px */
+    --spacing-5: 1.25rem;   /* 20px */
+    --spacing-6: 1.5rem;    /* 24px */
+    --spacing-8: 2rem;      /* 32px */
+    --spacing-10: 2.5rem;   /* 40px */
+    --spacing-12: 3rem;     /* 48px */
+    --spacing-16: 4rem;     /* 64px */
+    --spacing-20: 5rem;     /* 80px */
+    --spacing-24: 6rem;     /* 96px */
+    
+    /* Semantic Spacing */
+    --spacing-xs: var(--spacing-2);
+    --spacing-sm: var(--spacing-4);
+    --spacing-md: var(--spacing-6);
+    --spacing-lg: var(--spacing-8);
+    --spacing-xl: var(--spacing-12);
+    --spacing-2xl: var(--spacing-16);
+    
+    /* Section Spacing */
+    --spacing-section-mobile: 60px;
+    --spacing-section-tablet: 80px;
+    --spacing-section-desktop: 100px;
+    
+    /* ============================================
+       BORDER RADIUS
+       ============================================ */
+    
+    --radius-none: 0;
+    --radius-sm: 0.25rem;   /* 4px */
+    --radius-md: 0.5rem;    /* 8px */
+    --radius-lg: 0.75rem;   /* 12px */
+    --radius-xl: 1rem;      /* 16px */
+    --radius-2xl: 1.5rem;   /* 24px */
+    --radius-full: 9999px;
+    
+    /* ============================================
+       SHADOWS
+       ============================================ */
+    
+    --shadow-none: none;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    
+    /* Premium Shadows */
+    --shadow-premium: 0 20px 40px rgba(10, 22, 40, 0.15);
+    --shadow-premium-hover: 0 30px 60px rgba(10, 22, 40, 0.2);
+    --shadow-glow: 0 0 30px rgba(201, 169, 98, 0.3);
+    
+    /* ============================================
+       TRANSITIONS
+       ============================================ */
+    
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-slower: 700ms ease;
+    --transition-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* ============================================
+       Z-INDEX SCALE
+       ============================================ */
+    
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+    --z-toast: 800;
+    
+    /* ============================================
+       BREAKPOINTS
+       ============================================ */
+    
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1440px;
+    
+    /* ============================================
+       ANIMATION TIMING
+       ============================================ */
+    
+    --animation-duration-fast: 200ms;
+    --animation-duration-normal: 400ms;
+    --animation-duration-slow: 600ms;
+    --animation-duration-slower: 800ms;
+    
+    /* ============================================
+       GRADIENTS
+       ============================================ */
+    
+    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    --gradient-dark: linear-gradient(180deg, var(--color-primary) 0%, var(--color-black) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* Dark Mode Support (Optional Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Can be activated later if needed */
+        /* --color-bg-primary: var(--color-gray-900); */
+        /* --color-text-primary: var(--color-white); */
+    }
+}

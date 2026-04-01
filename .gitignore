@@ -1,0 +1,59 @@
+```
+# Dependencies
+vendor/
+node_modules/
+
+# PHP
+*.php~
+*.php.bak
+*.php.swp
+*.php.swo
+
+# Cache and temporary files
+*.tmp
+*.temp
+*.cache
+*.log
+*.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment files
+.env
+.env.local
+.env.*
+!.env.example
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and distribution
+dist/
+build/
+target/
+coverage/
+htmlcov/
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+
+# Python (if present)
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+.eggs/
+.coverage
+.pytest_cache/
+.mypy_cache/
+venv/
+.venv/
+```
