@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для Ангелины ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hearts-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff6b8a;
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .compliment-container {
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .compliment {
+            font-size: 1.4em;
+            color: #333;
+            line-height: 1.6;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #e91e63, #ff6b8a);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.6);
+        }
+
+        .refresh-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .big-heart {
+            font-size: 3em;
+            margin: 20px 0;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .compliment {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-bg" id="heartsBg"></div>
+    
+    <div class="card">
+        <h1>Ангелина! 💕</h1>
+        
+        <div class="big-heart">❤️</div>
+        
+        <div class="compliment-container">
+            <p class="compliment" id="complimentText"></p>
+        </div>
+        
+        <button class="refresh-btn" onclick="newCompliment()">Получить комплимент ✨</button>
+        
+        <p class="footer-text">Я с тобой! У тебя всё получится! 💪</p>
+    </div>
+
+    <script>
+        const compliments = [
+            "Ты невероятно красивая и умная! 🌟",
+            "Твоя улыбка освещает всё вокруг! ☀️",
+            "Ты сильная и можешь справиться с чем угодно! 💪",
+            "Ты заслуживаешь всего самого лучшего! 💎",
+            "Твоя доброта делает мир лучше! 🌸",
+            "Ты вдохновляешь меня каждый день! ✨",
+            "У тебя потрясающая энергетика! ⚡",
+            "Ты уникальная и неповторимая! 🦋",
+            "Верь в себя, как я верю в тебя! 💫",
+            "Ты справишься со всем, что встретится на пути! 🏆",
+            "Твои глаза сияют ярче звёзд! ⭐",
+            "Ты - чудо, которое случилось в моей жизни! 🎁",
+            "Каждый день с тобой - подарок! 🎀",
+            "Ты замечательная во всех отношениях! 💖",
+            "Твоя поддержка значит для меня всё! 🤗",
+            "Ты самая лучшая! Помни об этом! 👑",
+            "У тебя всё получится, я знаю! 🎯",
+            "Ты прекрасна внутри и снаружи! 🌺",
+            "Твой смех - моя любимая мелодия! 🎵",
+            "Ты делаешь этот мир ярче! 🌈",
+            "Я горжусь тобой бесконечно! 🏅",
+            "Ты - моё солнышко в любой погоде! ☀️",
+            "Твоя сила восхищает меня! 💥",
+            "Ты достойна счастья каждую секунду! 🎊",
+            "Люблю тебя больше всего на свете! 💕",
+            "Ты - лучшее, что могло случиться! 🍀",
+            "Твоя нежность покоряет сердца! 💗",
+            "Ты невероятная женщина! 🔥",
+            "С тобой всё становится возможным! 🚀",
+            "Ты - моя ангел-хранитель! 👼"
+        ];
+
+        function newCompliment() {
+            const complimentElement = document.getElementById('complimentText');
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            
+            // Анимация исчезновения
+            complimentElement.style.animation = 'none';
+            complimentElement.offsetHeight; // trigger reflow
+            
+            complimentElement.textContent = compliments[randomIndex];
+            complimentElement.style.animation = 'fadeIn 0.5s ease-in';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = ['❤️', '💕', '💖', '💗', '💓', '💞', '💘', '💝'][Math.floor(Math.random() * 8)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+            
+            document.getElementById('heartsBg').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        // Создаём падающие сердечки
+        setInterval(createHeart, 300);
+
+        // Показываем первый комплимент при загрузке
+        newCompliment();
+
+        // Автоматическая смена комплиментов каждые 8 секунд
+        setInterval(newCompliment, 8000);
+    </script>
+</body>
+</html>
